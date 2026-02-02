@@ -1,0 +1,128 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #111;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 3px solid #e63946;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #e63946;
+  letter-spacing: 2px;
+}
+
+header p {
+  font-style: italic;
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-weight: bold;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #e63946;
+  text-shadow: 0 0 10px #e63946;
+}
+
+/* Section */
+section {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Galeri Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.karya {
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.karya img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.karya h3 {
+  padding: 1rem;
+  color: #e63946;
+}
+
+.karya p {
+  padding: 0 1rem 1rem;
+  color: #ccc;
+}
+
+.karya:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(230, 57, 70, 0.7);
+}
+
+.karya:hover img {
+  transform: scale(1.05);
+}
+
+/* Profil Anggota */
+.profil {
+  background: #222;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 5px solid #e63946;
+  border-radius: 8px;
+}
+
+.profil h3 {
+  color: #e63946;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  text-align: center;
+  padding: 1rem;
+  border-top: 3px solid #e63946;
+  color: #888;
+}
