@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Loading Screen (tetap) */
+/* Loading Screen */
 .loader {
   position: fixed;
   inset: 0;
@@ -45,21 +45,21 @@ body {
   min-height: 100vh;
 }
 
-/* Header - TIPIS, FIXED, NGGAK NGALANGIN */
+/* Header - TIPIS, FIXED, TETAP ADA JUDUL */
 header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(17, 17, 17, 0.92);
-  padding: 0.8rem 1.5rem;
+  background: rgba(17, 17, 17, 0.95);
+  padding: 0.8rem 1rem;
   z-index: 1000;
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-  height: 80px; /* tinggi maksimal header */
+  height: 80px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border-bottom: 2px solid #e63946;
 }
 
@@ -74,11 +74,11 @@ header {
 }
 
 header h1 {
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
   color: #e63946;
-  letter-spacing: 3px;
-  text-shadow: 0 0 12px rgba(230, 57, 70, 0.7);
+  letter-spacing: 2px;
   margin: 0;
+  text-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
 }
 
 header p {
@@ -86,12 +86,13 @@ header p {
   color: #bbb;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   margin: 0;
+  display: none; /* sengaja disembunyikan di header biar tipis, muncul di halaman kalau perlu */
 }
 
-/* Navigation horizontal di kanan */
+/* Navigation horizontal */
 nav ul {
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -112,7 +113,7 @@ nav ul li a:hover {
   color: #e63946;
 }
 
-/* Clock di pojok kanan */
+/* Clock */
 #clock {
   font-family: 'Orbitron', monospace;
   font-size: 1.2rem;
@@ -123,31 +124,83 @@ nav ul li a:hover {
 
 /* Konten utama - MULAI DARI BAWAH HEADER */
 main {
-  margin-top: 100px; /* Jarak aman dari header fixed (80px header + 20px buffer) */
+  margin-top: 90px; /* Jarak aman dari header fixed (80px header + 10px buffer) */
   padding: 2rem 1rem;
 }
 
-/* Section & Gallery (tetap sama, tapi lebih rapi) */
+/* Section */
 section {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem 0;
 }
 
+/* Gallery Grid - FOTO & TULISAN RAPUH & SEIMBANG */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
   padding: 1rem;
 }
 
-/* karya, modal, watermark, dll tetap sama seperti sebelumnya, nggak perlu diubah */
+.karya {
+  background: rgba(34, 34, 34, 0.85);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  border: 1px solid rgba(230, 57, 70, 0.25);
+  display: flex;
+  flex-direction: column;
+}
 
-/* Responsif HP */
+.karya img {
+  width: 100%;
+  height: 220px; /* Foto punya tinggi tetap biar rapi & nggak terlalu gede */
+  object-fit: cover; /* Foto nggak terdistorsi, tetap proporsional */
+  transition: transform 0.6s ease;
+}
+
+.karya h3 {
+  padding: 1rem 1rem 0.5rem;
+  color: #e63946;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.karya p {
+  padding: 0 1rem 1.2rem;
+  color: #ccc;
+  font-size: 0.95rem;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.karya:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 40px rgba(230, 57, 70, 0.45);
+  border-color: #e63946;
+}
+
+.karya:hover img {
+  transform: scale(1.08);
+}
+
+/* Footer - TETAP CENTER, NGGAK KE KIRI */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #111;
+  border-top: 3px solid #e63946;
+  margin-top: 4rem;
+  color: #888;
+}
+
+/* Responsif HP - SEMUA JADI RAPIH */
 @media (max-width: 768px) {
   header {
     padding: 0.8rem 1rem;
-    height: 100px; /* sedikit lebih tinggi di HP biar muat */
+    height: auto;
   }
   .header-container {
     flex-direction: column;
@@ -155,10 +208,18 @@ section {
   }
   nav ul {
     flex-wrap: wrap;
-    gap: 0.8rem;
+    gap: 0.6rem;
     justify-content: center;
   }
   main {
-    margin-top: 120px; /* sesuaikan di HP */
+    margin-top: 120px;
+    padding: 1.5rem 0.8rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  .karya img {
+    height: 200px; /* Foto lebih kecil & proporsional di HP */
   }
 }
