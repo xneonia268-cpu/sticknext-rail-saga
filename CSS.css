@@ -196,4 +196,70 @@ section {
 .loader.hidden {
   opacity: 0;
   pointer-events: none;
+
+  /* Modal Zoom Gambar */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(230, 57, 70, 0.5);
+  animation: zoomIn 0.4s ease;
+}
+
+.watermark {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  color: rgba(230, 57, 70, 0.5);
+  font-family: 'Orbitron', monospace;
+  font-size: 1rem;
+  pointer-events: none;
+  text-shadow: 0 0 5px rgba(230, 57, 70, 0.3);
+}
+
+.close-modal {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #e63946;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.close-modal:hover {
+  transform: scale(1.2);
+  color: #ff4444;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsif modal di HP */
+@media (max-width: 768px) {
+  .close-modal {
+    top: 20px;
+    right: 20px;
+    font-size: 2.5rem;
+  }
+  .watermark {
+    font-size: 0.9rem;
+    bottom: 15px;
+    right: 20px;
+  }
+}
 }
