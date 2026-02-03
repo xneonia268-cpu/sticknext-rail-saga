@@ -101,166 +101,110 @@ header p {
   transition: all 0.3s;
 }
 
-/* Sidebar */
+/* Sidebar - SOLID, GELAP, FUTURISTIK */
 .sidebar {
   position: fixed;
   top: 0;
-  right: -300px;
-  width: 300px;
+  right: -320px; /* sedikit lebih lebar biar nyaman */
+  width: 320px;
   height: 100%;
-  background: rgba(17, 17, 17, 0.98);
-  backdrop-filter: blur(10px);
+  background: #000000; /* hitam mutlak, nggak tembus sama sekali */
   color: #e0e0e0;
-  transition: right 0.4s ease;
+  transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* animasi lebih halus */
   z-index: 999;
-  padding: 80px 20px 20px;
+  padding: 80px 25px 30px;
+  box-shadow: -15px 0 40px rgba(0, 0, 0, 0.9); /* bayangan kiri dramatis */
+  overflow-y: auto;
 }
 
-.sidebar.active { right: 0; }
+/* Efek glow merah tipis di pinggir kiri sidebar */
+.sidebar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(to bottom, #e63946, #ff4444, #e63946);
+  box-shadow: 0 0 25px rgba(230, 57, 70, 0.7);
+  opacity: 0.8;
+}
 
+/* Overlay gelap tambahan (biar kelihatan lebih dalam & kosmik) */
+.sidebar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(10, 10, 10, 0.92) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+/* Close button lebih keren */
 .close-sidebar {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 3rem;
+  top: 25px;
+  right: 25px;
+  font-size: 3.5rem;
   color: #e63946;
   cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
 }
 
+.close-sidebar:hover {
+  transform: rotate(90deg) scale(1.2);
+  color: #ff4444;
+  text-shadow: 0 0 20px #ff4444;
+}
+
+/* Menu di sidebar */
 .sidebar ul {
   list-style: none;
   padding: 0;
+  margin: 2rem 0;
 }
 
-.sidebar ul li { margin: 1.5rem 0; }
+.sidebar ul li {
+  margin: 1.8rem 0;
+}
 
 .sidebar ul li a {
   color: #f0f0f0;
   text-decoration: none;
-  font-size: 1.3rem;
-  transition: color 0.3s;
-}
-
-.sidebar ul li a:hover { color: #e63946; }
-
-/* Nav horizontal */
-nav ul {
-  display: flex;
-  gap: 1.2rem;
-  list-style: none;
-}
-
-nav ul li a {
-  color: #f0f0f0;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
+  font-size: 1.35rem;
+  font-weight: 500;
   transition: all 0.3s ease;
-  font-size: 0.95rem;
+  display: block;
+  padding: 0.6rem 0;
+  border-left: 4px solid transparent;
 }
 
-nav ul li a:hover {
-  background: rgba(230, 57, 70, 0.3);
+.sidebar ul li a:hover {
   color: #e63946;
+  padding-left: 0.8rem;
+  border-left: 4px solid #e63946;
+  text-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
 }
 
-/* Clock */
-#clock {
+/* Clock di sidebar (mobile) */
+.clock-mobile {
+  margin-top: 3rem;
   font-family: 'Orbitron', monospace;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #00ffe0;
-  text-shadow: 0 0 10px #00ffe0;
-  white-space: nowrap;
-}
-
-/* Main */
-main {
-  padding: 2rem 1rem;
-}
-
-/* Section */
-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem 0;
-}
-
-/* Gallery Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
-}
-
-.karya {
-  background: rgba(34, 34, 34, 0.85);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  cursor: pointer;
-  border: 1px solid rgba(230, 57, 70, 0.25);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.karya img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.karya h3 {
-  padding: 1rem 1rem 0.5rem;
-  color: #e63946;
-  font-size: 1.3rem;
-  margin: 0;
-}
-
-.karya p {
-  padding: 0 1rem 1.2rem;
-  color: #ccc;
-  font-size: 0.95rem;
-  margin: 0;
-  flex-grow: 1;
-}
-
-.karya:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 15px 40px rgba(230, 57, 70, 0.45);
-  border-color: #e63946;
-}
-
-.karya:hover img { transform: scale(1.08); }
-
-/* Footer */
-footer {
   text-align: center;
-  padding: 2rem 1rem;
-  background: #111;
-  border-top: 3px solid #e63946;
-  margin-top: 4rem;
-  color: #888;
+  text-shadow: 0 0 15px #00ffe0;
 }
 
-/* Responsive */
+/* Responsif HP (sudah ada, tapi gue pastiin sidebar lebih nyaman) */
 @media (max-width: 768px) {
-  .hamburger { display: flex; }
-  nav ul { display: none; }
-  header {
-    padding: 0.8rem 1rem;
-    height: auto;
+  .sidebar {
+    width: 85%; /* lebih lebar di HP biar nyaman baca */
+    right: -85%;
   }
-  body { padding-top: 100px; } /* lebih tinggi untuk header wrap */
-  main {
-    padding: 1.5rem 0.8rem;
-  }
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
-  }
-  .karya img { height: 200px; }
 }
