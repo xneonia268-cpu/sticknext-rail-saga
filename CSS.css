@@ -45,187 +45,13 @@ body {
   min-height: 100vh;
 }
 
-/* Header */
+/* Header - TIPIS, FIXED, NGGAK NGALANGIN */
 header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(17, 17, 17, 0.95);
-  padding: 0.8rem 1rem;
-  z-index: 1000;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid #e63946;
-}
-
-.header-container {
-  max-width: 1400px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-header h1 {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  color: #e63946;
-  letter-spacing: 2px;
-  margin: 0;
-  text-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
-}
-
-header p {
-  font-style: italic;
-  color: #bbb;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  margin: 0;
-  display: none;
-}
-
-/* Navigation */
-nav ul {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-}
-
-nav ul li a {
-  color: #f0f0f0;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  font-size: 0.95rem;
-}
-
-nav ul li a:hover {
-  background: rgba(230, 57, 70, 0.3);
-  color: #e63946;
-}
-
-/* Clock */
-#clock {
-  font-family: 'Orbitron', monospace;
-  font-size: 1.2rem;
-  color: #00ffe0;
-  text-shadow: 0 0 10px #00ffe0;
-  white-space: nowrap;
-}
-
-/* Main Content */
-main {
-  padding: 100px 1rem 2rem; /* lebih aman daripada margin-top */
-}
-
-/* Section */
-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem 0;
-}
-
-/* Gallery Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
-}
-
-.karya {
-  background: rgba(34, 34, 34, 0.85);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  cursor: pointer;
-  border: 1px solid rgba(230, 57, 70, 0.25);
-  display: flex;
-  flex-direction: column;
-}
-
-.karya img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.karya h3 {
-  padding: 1rem 1rem 0.5rem;
-  color: #e63946;
-  font-size: 1.3rem;
-  margin: 0;
-}
-
-.karya p {
-  padding: 0 1rem 1.2rem;
-  color: #ccc;
-  font-size: 0.95rem;
-  margin: 0;
-  flex-grow: 1;
-}
-
-.karya:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 15px 40px rgba(230, 57, 70, 0.45);
-  border-color: #e63946;
-}
-
-.karya:hover img {
-  transform: scale(1.08);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: #111;
-  border-top: 3px solid #e63946;
-  margin-top: 4rem;
-  color: #888;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  header {
-    padding: 0.8rem 1rem;
-    height: auto;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  nav ul {
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    justify-content: center;
-  }
-  main {
-    padding-top: 130px; /* lebih fleksibel di HP */
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
-  }
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
-  }
-  .karya img {
-    height: 200px;
-  }
-}
-
-/* Header minimalis + slidebar */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(17, 17, 17, 0.95);
+  background: rgba(17, 17, 17, 0.92);
   padding: 0.8rem 1.5rem;
   z-index: 1000;
   backdrop-filter: blur(12px);
@@ -234,18 +60,21 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid #e63946;
 }
 
 .header-left {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.2rem;
 }
 
 header h1 {
   font-size: clamp(1.4rem, 4vw, 2.2rem);
   color: #e63946;
+  letter-spacing: 2px;
   margin: 0;
+  text-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
 }
 
 header p {
@@ -255,7 +84,7 @@ header p {
   font-style: italic;
 }
 
-/* Tombol hamburger (hanya di HP) */
+/* Tombol hamburger (hanya muncul di HP) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -271,7 +100,7 @@ header p {
   transition: all 0.3s;
 }
 
-/* Sidebar (geser dari kanan) */
+/* Sidebar (geser dari kanan di HP) */
 .sidebar {
   position: fixed;
   top: 0;
@@ -319,39 +148,135 @@ header p {
   color: #e63946;
 }
 
-.clock-mobile {
-  margin-top: 2rem;
-  font-family: 'Orbitron', monospace;
-  font-size: 1.4rem;
-  color: #00ffe0;
-  text-align: center;
-}
-
-/* Nav di layar besar (horizontal) */
-.main-nav {
+/* Nav horizontal di layar besar */
+nav ul {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+nav ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+nav ul li a:hover {
+  background: rgba(230, 57, 70, 0.3);
+  color: #e63946;
+}
+
+/* Clock */
+#clock {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.2rem;
+  color: #00ffe0;
+  text-shadow: 0 0 10px #00ffe0;
+  white-space: nowrap;
+}
+
+/* Konten utama - MULAI DARI BAWAH HEADER */
+main {
+  margin-top: 80px; /* Jarak aman dari header fixed */
+  padding: 2rem 1rem;
+}
+
+/* Section */
+section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Gallery Grid - FOTO & TULISAN RAPUH & SEIMBANG */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.karya {
+  background: rgba(34, 34, 34, 0.85);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  border: 1px solid rgba(230, 57, 70, 0.25);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* biar kotak rapih */
+}
+
+.karya img {
+  width: 100%;
+  height: 220px; /* tinggi foto fix biar rapi & nggak kegedean */
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.karya h3 {
+  padding: 1rem 1rem 0.5rem;
+  color: #e63946;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.karya p {
+  padding: 0 1rem 1.2rem;
+  color: #ccc;
+  font-size: 0.95rem;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.karya:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 40px rgba(230, 57, 70, 0.45);
+  border-color: #e63946;
+}
+
+.karya:hover img {
+  transform: scale(1.08);
+}
+
+/* Footer - CENTER & RAPUH */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #111;
+  border-top: 3px solid #e63946;
+  margin-top: 4rem;
+  color: #888;
+}
+
+/* Responsif HP */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
-  .main-nav {
+  nav ul {
     display: none;
   }
   header {
-    justify-content: space-between;
     padding: 0.8rem 1rem;
+    height: auto;
   }
   main {
-    margin-top: 70px; /* cukup untuk header tipis */
+    margin-top: 70px;
+    padding: 1.5rem 0.8rem;
   }
-}
-
-/* Konten utama */
-main {
-  margin-top: 80px;
-  padding: 2rem 1rem;
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  .karya img {
+    height: 200px;
+  }
 }
