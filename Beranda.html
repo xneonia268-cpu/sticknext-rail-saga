@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StickNext Saga Rail • Kereta KAI Menjelajah Multiverse</title>
   
-  <!-- CSS lo yang udah di-upgrade -->
+  <!-- CSS utama -->
   <link rel="stylesheet" href="CSS.css">
   
-  <!-- Google Fonts: Orbitron untuk tampilan futuristik -->
+  <!-- Google Fonts: Orbitron -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   
-  <!-- AOS Library untuk animasi fade-in saat scroll -->
+  <!-- AOS Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
@@ -23,25 +23,27 @@
 
   <!-- Header -->
   <header>
-  <div class="header-container">
-    <h1>StickNext Saga Rail</h1>
-    <p>Kumpulan karya epik lokomotif KAI dari komunitas</p>
-    
-    <nav>
-      <ul>
-        <li><a href="Beranda.html">Beranda</a></li>
-        <li><a href="galeri.html">Galeri</a></li>
-        <li><a href="anggota.html">Anggota</a></li>
-        <li><a href="tentang.html">Tentang</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-        <li><a href="disclaimer.html">Disclaimer</a></li>
-      </ul>
-      <div id="clock"></div>
-    </nav>
-  </div>
-</header>
-  <!-- Konten Beranda -->
+    <div class="header-container">
+      <h1>StickNext Saga Rail</h1>
+      <p>Kumpulan karya epik lokomotif KAI dari komunitas</p>
+      
+      <nav>
+        <ul>
+          <li><a href="Beranda.html">Beranda</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="anggota.html">Anggota</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+        <div id="clock"></div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Konten Utama -->
   <main>
+    <!-- Intro -->
     <section id="intro" data-aos="fade-up" data-aos-duration="800">
       <h2>Selamat Datang di StickNext Saga Rail</h2>
       <p>
@@ -51,6 +53,7 @@
       </p>
     </section>
 
+    <!-- Highlight -->
     <section id="highlight" data-aos="fade-up" data-aos-delay="200">
       <h2>Karya Highlight</h2>
       <div class="grid">
@@ -98,7 +101,7 @@
     updateClock();
   </script>
 
-  <!-- Loading screen JS -->
+  <!-- Loading Screen JS -->
   <script>
     window.addEventListener('load', () => {
       const loader = document.getElementById('loader');
@@ -108,8 +111,5 @@
       }, 800);
     });
   </script>
-
-  <!-- Script.js lo (kalau ada JS tambahan) -->
-  <script src="script.js"></script>
 </body>
 </html>
