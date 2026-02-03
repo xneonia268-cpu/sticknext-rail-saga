@@ -23,49 +23,48 @@
 
   <!-- Header -->
   <header>
-  <div class="header-left">
-    <h1>Galeri StickNext Saga Rail</h1>
-    <p>Kumpulan karya epik lokomotif KAI dari komunitas</p>
-  </div>
+    <div class="header-left">
+      <h1>Galeri StickNext Saga Rail</h1>
+      <p>Kumpulan karya epik lokomotif KAI dari komunitas</p>
+    </div>
 
-  <!-- Tombol hamburger (hanya muncul di HP) -->
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <!-- Tombol hamburger (ID disamain dengan JS) -->
+    <div class="hamburger" id="hamburger-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-  <!-- Nav normal (muncul di PC, disembunyi di HP) -->
-  <nav class="main-nav">
-    <ul>
-      <li><a href="Beranda.html">Beranda</a></li>
-      <li><a href="galeri.html">Galeri</a></li>
-      <li><a href="anggota.html">Anggota</a></li>
-      <li><a href="tentang.html">Tentang</a></li>
-      <li><a href="kontak.html">Kontak</a></li>
-      <li><a href="disclaimer.html">Disclaimer</a></li>
-    </ul>
-    <div id="clock"></div>
-  </nav>
+    <!-- Nav normal (muncul di PC) -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="Beranda.html">Beranda</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="anggota.html">Anggota</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+      <div id="clock"></div>
+    </nav>
 
-  <!-- Sidebar (muncul pas tombol ditekan di HP) -->
-  <div class="sidebar" id="sidebar">
-    <span class="close-sidebar" id="close-sidebar">&times;</span>
-    <ul>
-      <li><a href="Beranda.html">Beranda</a></li>
-      <li><a href="galeri.html">Galeri</a></li>
-      <li><a href="anggota.html">Anggota</a></li>
-      <li><a href="tentang.html">Tentang</a></li>
-      <li><a href="kontak.html">Kontak</a></li>
-      <li><a href="disclaimer.html">Disclaimer</a></li>
-    </ul>
-    <div id="clock-mobile" class="clock-mobile"></div>
-  </div>
-</header>
+    <!-- Sidebar (muncul pas tombol ditekan di HP) -->
+    <div class="sidebar" id="sidebar">
+      <span class="close-sidebar" id="close-sidebar">×</span>
+      <ul>
+        <li><a href="Beranda.html">Beranda</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="anggota.html">Anggota</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+      <div id="clock-mobile" class="clock-mobile"></div>
+    </div>
+  </header>
 
   <!-- Konten Utama -->
   <main>
-    <!-- Intro -->
     <section id="intro" data-aos="fade-up" data-aos-duration="800">
       <h2>Selamat Datang di StickNext Saga Rail</h2>
       <p>
@@ -75,7 +74,6 @@
       </p>
     </section>
 
-    <!-- Highlight -->
     <section id="highlight" data-aos="fade-up" data-aos-delay="200">
       <h2>Karya Highlight</h2>
       <div class="grid">
@@ -132,6 +130,29 @@
         loader.style.display = 'none';
       }, 800);
     });
+  </script>
+
+  <!-- Script Hamburger + Sidebar -->
+  <script>
+    const hamburger = document.getElementById('hamburger-btn');
+    const sidebar = document.getElementById('sidebar');
+    const closeBtn = document.getElementById('close-sidebar');
+
+    if (hamburger && sidebar && closeBtn) {
+      hamburger.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+          sidebar.classList.remove('active');
+        }
+      });
+    }
   </script>
 </body>
 </html>
