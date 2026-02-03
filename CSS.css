@@ -43,7 +43,7 @@ body {
   color: #e0e0e0;
   line-height: 1.7;
   min-height: 100vh;
-  padding-top: 80px; /* Jarak aman dari header fixed */
+  padding-top: 90px; /* Jarak aman dari header fixed */
 }
 
 /* Header - TIPIS, FIXED, NGGAK NGALANGIN */
@@ -52,7 +52,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(17, 17, 17, 0.95);
+  background: rgba(17, 17, 17, 0.92);
   padding: 0.8rem 1.5rem;
   z-index: 1000;
   backdrop-filter: blur(12px);
@@ -85,7 +85,7 @@ header p {
   font-style: italic;
 }
 
-/* Tombol hamburger - MUNcul di HP */
+/* Tombol hamburger - HANYA di HP */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -102,15 +102,15 @@ header p {
   transition: all 0.3s;
 }
 
-/* Sidebar - SOLID HITAM PEKAT */
+/* Sidebar - SOLID HITAM PEKAT, PASTI KELIHATAN */
 .sidebar {
   position: fixed;
   top: 0;
   right: -320px;
   width: 320px;
   height: 100%;
-  background: #000000; /* hitam solid 100% */
-  color: #e0e0e0;
+  background: #000000; /* hitam solid 100%, nggak transparan */
+  color: #ffffff; /* teks putih terang biar pasti kelihatan */
   transition: right 0.4s ease;
   z-index: 999;
   padding: 90px 25px 30px;
@@ -122,7 +122,7 @@ header p {
   right: 0;
 }
 
-/* Garis merah glowing di kiri sidebar */
+/* Garis merah glowing di kiri sidebar (tanda KAI) */
 .sidebar::before {
   content: "";
   position: absolute;
@@ -130,8 +130,8 @@ header p {
   top: 0;
   bottom: 0;
   width: 6px;
-  background: linear-gradient(to bottom, #e63946, #ff4444, #e63946);
-  box-shadow: 0 0 25px rgba(230, 57, 70, 0.8);
+  background: #e63946;
+  box-shadow: 0 0 30px rgba(230, 57, 70, 0.8);
 }
 
 /* Close button */
@@ -162,7 +162,7 @@ header p {
 }
 
 .sidebar ul li a {
-  color: #f0f0f0;
+  color: #ffffff;
   text-decoration: none;
   font-size: 1.35rem;
   transition: all 0.3s;
@@ -173,6 +173,7 @@ header p {
 .sidebar ul li a:hover {
   color: #e63946;
   padding-left: 0.8rem;
+  text-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
 }
 
 /* Clock di sidebar */
@@ -261,8 +262,12 @@ footer {
 
 /* Responsive HP */
 @media (max-width: 768px) {
-  .hamburger { display: flex; }
-  nav.main-nav { display: none; }
+  .hamburger {
+    display: flex;
+  }
+  .main-nav {
+    display: none;
+  }
   header {
     padding: 0.8rem 1rem;
     height: auto;
