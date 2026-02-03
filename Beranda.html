@@ -2,14 +2,30 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>StickNext Saga Rail</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StickNext Saga Rail • Kereta KAI Menjelajah Multiverse</title>
+  
+  <!-- CSS lo yang udah di-upgrade -->
   <link rel="stylesheet" href="CSS.css">
+  
+  <!-- Google Fonts: Orbitron untuk tampilan futuristik -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- AOS Library untuk animasi fade-in saat scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div id="loader" class="loader">
+    <div class="spinner"></div>
+    <p>Melaju ke multiverse...</p>
+  </div>
+
   <!-- Header -->
   <header>
-    <h1>StickNext Saga Rail</h1>
-    <p>Perjalanan epik lokomotif KAI melintasi dunia tak terduga</p>
+    <h1 data-aos="fade-down" data-aos-duration="1000">StickNext Saga Rail</h1>
+    <p data-aos="fade-up" data-aos-delay="300">Perjalanan epik lokomotif KAI melintasi dunia tak terduga</p>
+    
     <nav>
       <ul>
         <li><a href="Beranda.html">Beranda</a></li>
@@ -18,14 +34,14 @@
         <li><a href="tentang.html">Tentang</a></li>
         <li><a href="kontak.html">Kontak</a></li>
         <li><a href="disclaimer.html">Disclaimer</a></li>
-<div id="clock"></div>
       </ul>
+      <div id="clock"></div>
     </nav>
   </header>
 
   <!-- Konten Beranda -->
   <main>
-    <section id="intro">
+    <section id="intro" data-aos="fade-up" data-aos-duration="800">
       <h2>Selamat Datang di StickNext Saga Rail</h2>
       <p>
         Komunitas kreatif yang menampilkan karya epik lokomotif KAI dalam berbagai dunia.  
@@ -34,17 +50,18 @@
       </p>
     </section>
 
-    <section id="highlight">
+    <section id="highlight" data-aos="fade-up" data-aos-delay="200">
       <h2>Karya Highlight</h2>
       <div class="grid">
-        <article class="karya">
+        <article class="karya" data-aos="zoom-in" data-aos-duration="800">
           <h3>KAI Membeku</h3>
-          <img src="cc206 frozen train.jpg" alt="Kereta KAI Membeku">
+          <img src="cc206 frozen train.jpg" alt="Kereta KAI Membeku" loading="lazy">
           <p>Kereta KAI melintasi dunia es abadi.</p>
         </article>
-        <article class="karya">
+        
+        <article class="karya" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
           <h3>KAI Menuju Surga</h3>
-          <img src="cc201 go to heaven.jpg" alt="Kereta KAI Menuju Surga">
+          <img src="cc201 go to heaven.jpg" alt="Kereta KAI Menuju Surga" loading="lazy">
           <p>Perjalanan menuju gerbang bercahaya.</p>
         </article>
       </div>
@@ -53,8 +70,45 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 StickNext Saga Rail</p>
+    <p>© 2026 StickNext Saga Rail • Dibuat oleh Screet • Pure imagination</p>
   </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out'
+    });
+  </script>
+
+  <!-- Clock JS -->
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('id-ID', { 
+        hour12: false, 
+        timeZone: 'Asia/Jakarta' 
+      });
+      document.getElementById('clock').innerText = time;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+  <!-- Loading screen JS -->
+  <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.style.opacity = '0';
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 800);
+    });
+  </script>
+
+  <!-- Script.js lo (kalau ada JS tambahan) -->
   <script src="script.js"></script>
 </body>
 </html>
