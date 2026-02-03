@@ -262,4 +262,19 @@ section {
     right: 20px;
   }
 }
+
+/* Header tetap di atas saat scroll (sticky) */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(17, 17, 17, 0.95); /* biar agak tembus pandang supaya nggak terlalu blokir */
+  backdrop-filter: blur(10px); /* efek blur keren (didukung hampir semua browser modern) */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* bayangan halus biar keliatan floating */
+}
+
+/* Biar konten nggak tertutup header saat sticky */
+main {
+  padding-top: 1rem; /* sesuaikan kalau header lo terlalu tinggi */
+}
 }
