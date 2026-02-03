@@ -134,6 +134,17 @@
     <p>&copy; 2026 StickNext Saga Rail • Dibuat oleh Screet</p>
   </footer>
 
+  <!-- Loading Screen JS -->
+  <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.style.opacity = '0';
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 800);
+    });
+  </script>
+
   <!-- Script Hamburger + Sidebar -->
   <script>
     const hamburger = document.getElementById('hamburger-btn');
