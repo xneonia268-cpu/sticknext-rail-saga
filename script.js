@@ -1,20 +1,3 @@
-// Dark Mode Toggle dengan localStorage
-const darkModeBtn = document.getElementById("darkModeBtn");
-
-// Cek preferensi sebelumnya
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark-mode");
-}
-
-darkModeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  if (document.body.classList.contains("dark-mode")) {
-    localStorage.setItem("theme", "dark");
-  } else {
-    localStorage.setItem("theme", "light");
-  }
-});
-
 // Jam Digital + Tanggal
 function updateClock() {
   const now = new Date();
