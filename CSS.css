@@ -218,3 +218,140 @@ footer {
     height: 200px;
   }
 }
+
+/* Header minimalis + slidebar */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(17, 17, 17, 0.95);
+  padding: 0.8rem 1.5rem;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+header h1 {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  color: #e63946;
+  margin: 0;
+}
+
+header p {
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  color: #bbb;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Tombol hamburger (hanya di HP) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #e63946;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Sidebar (geser dari kanan) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.98);
+  backdrop-filter: blur(10px);
+  color: #e0e0e0;
+  transition: right 0.4s ease;
+  z-index: 999;
+  padding: 80px 20px 20px;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.close-sidebar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 3rem;
+  color: #e63946;
+  cursor: pointer;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 1.5rem 0;
+}
+
+.sidebar ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  color: #e63946;
+}
+
+.clock-mobile {
+  margin-top: 2rem;
+  font-family: 'Orbitron', monospace;
+  font-size: 1.4rem;
+  color: #00ffe0;
+  text-align: center;
+}
+
+/* Nav di layar besar (horizontal) */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .main-nav {
+    display: none;
+  }
+  header {
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+  }
+  main {
+    margin-top: 70px; /* cukup untuk header tipis */
+  }
+}
+
+/* Konten utama */
+main {
+  margin-top: 80px;
+  padding: 2rem 1rem;
+}

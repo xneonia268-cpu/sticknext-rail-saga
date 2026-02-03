@@ -8,23 +8,45 @@
 <body>
   <!-- Header -->
   <header>
-  <div class="header-container">
+  <div class="header-left">
     <h1>Galeri StickNext Saga Rail</h1>
     <p>Kumpulan karya epik lokomotif KAI dari komunitas</p>
-    
-    <nav>
-      <ul>
-        <li><a href="Beranda.html">Beranda</a></li>
-        <li><a href="galeri.html">Galeri</a></li>
-        <li><a href="anggota.html">Anggota</a></li>
-        <li><a href="tentang.html">Tentang</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-        <li><a href="disclaimer.html">Disclaimer</a></li>
-      </ul>
-      <div id="clock"></div>
-    </nav>
   </div>
-</header> 
+
+  <!-- Tombol hamburger (hanya muncul di HP) -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Nav normal (muncul di PC, disembunyi di HP) -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="Beranda.html">Beranda</a></li>
+      <li><a href="galeri.html">Galeri</a></li>
+      <li><a href="anggota.html">Anggota</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li><a href="disclaimer.html">Disclaimer</a></li>
+    </ul>
+    <div id="clock"></div>
+  </nav>
+
+  <!-- Sidebar (muncul pas tombol ditekan di HP) -->
+  <div class="sidebar" id="sidebar">
+    <span class="close-sidebar" id="close-sidebar">&times;</span>
+    <ul>
+      <li><a href="Beranda.html">Beranda</a></li>
+      <li><a href="galeri.html">Galeri</a></li>
+      <li><a href="anggota.html">Anggota</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li><a href="disclaimer.html">Disclaimer</a></li>
+    </ul>
+    <div id="clock-mobile" class="clock-mobile"></div>
+  </div>
+</header>
 
   <!-- Konten Kontak -->
   <main>
