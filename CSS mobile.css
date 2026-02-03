@@ -1,0 +1,158 @@
+/* ============================================= */
+/*   CSS KHUSUS MOBILE / HP (max-width: 768px)   */
+/* ============================================= */
+
+@media (max-width: 768px) {
+
+  /* Body - jarak aman dari header */
+  body {
+    padding-top: 70px; /* sesuai tinggi header mobile */
+    font-size: 16px; /* base font lebih besar biar mudah dibaca */
+  }
+
+  /* Header mobile - tipis & fungsional */
+  header {
+    padding: 0.8rem 1rem;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-left {
+    flex: 1;
+    text-align: left;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  header p {
+    font-size: 0.9rem;
+    margin: 0.2rem 0 0;
+  }
+
+  /* Hamburger muncul di HP */
+  .hamburger {
+    display: flex !important;
+    z-index: 1001;
+  }
+
+  /* Nav horizontal disembunyikan di HP */
+  .main-nav {
+    display: none !important;
+  }
+
+  /* Sidebar - SOLID & KEREN di HP */
+  .sidebar {
+    width: 80vw !important;
+    right: -80vw !important;
+    background: #000000; /* hitam pekat solid */
+    color: #ffffff; /* teks putih terang */
+    padding: 80px 20px 40px;
+    box-shadow: -15px 0 40px rgba(0, 0, 0, 0.9);
+  }
+
+  .sidebar.active {
+    right: 0 !important;
+  }
+
+  /* Garis merah glowing di kiri sidebar */
+  .sidebar::before {
+    width: 5px;
+    background: #e63946;
+    box-shadow: 0 0 25px rgba(230, 57, 70, 0.9);
+  }
+
+  /* Close button */
+  .close-sidebar {
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+  }
+
+  /* Menu di sidebar - mudah dibaca */
+  .sidebar ul {
+    margin: 1.5rem 0;
+  }
+
+  .sidebar ul li {
+    margin: 1.6rem 0;
+  }
+
+  .sidebar ul li a {
+    font-size: 1.4rem;
+    padding: 0.8rem 0;
+  }
+
+  .sidebar ul li a:hover {
+    padding-left: 1rem;
+  }
+
+  /* Clock mobile */
+  .clock-mobile {
+    margin-top: 3rem;
+    font-size: 1.4rem;
+  }
+
+  /* Konten utama di HP */
+  main {
+    margin-top: 70px;
+    padding: 1.5rem 1rem;
+  }
+
+  /* Section */
+  section {
+    padding: 1.5rem 0;
+  }
+
+  /* Galeri di HP - 1 kolom, foto lebih kecil */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .karya {
+    border-radius: 10px;
+  }
+
+  .karya img {
+    height: 200px;
+  }
+
+  .karya h3 {
+    font-size: 1.3rem;
+    padding: 1rem 1rem 0.5rem;
+  }
+
+  .karya p {
+    font-size: 0.95rem;
+    padding: 0 1rem 1.2rem;
+  }
+
+  /* Footer di HP */
+  footer {
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  /* Modal zoom gambar di HP */
+  .modal-content {
+    max-width: 96%;
+    max-height: 85vh;
+  }
+
+  .close-modal {
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+  }
+
+  .watermark {
+    font-size: 0.95rem;
+    bottom: 15px;
+    right: 20px;
+  }
+}

@@ -43,206 +43,156 @@ body {
   color: #e0e0e0;
   line-height: 1.7;
   min-height: 100vh;
-  padding-top: 90px; /* Jarak aman dari header fixed */
 }
 
-/* Header - TIPIS, FIXED, NGGAK NGALANGIN */
+/* Header - TIPIS & FIXED (untuk PC/laptop) */
 header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background: rgba(17, 17, 17, 0.92);
-  padding: 0.8rem 1.5rem;
+  padding: 1rem 2rem;
   z-index: 1000;
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-  height: 70px;
+  height: 90px; /* lebih tinggi sedikit biar nyaman, tapi tetap tipis */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid #e63946;
+  border-bottom: 3px solid #e63946;
 }
 
 .header-left {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.3rem;
 }
 
 header h1 {
-  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   color: #e63946;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   margin: 0;
-  text-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
+  text-shadow: 0 0 12px rgba(230, 57, 70, 0.7);
 }
 
 header p {
-  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: #bbb;
   margin: 0;
   font-style: italic;
 }
 
-/* Tombol hamburger - HANYA di HP */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.hamburger span {
-  width: 28px;
-  height: 3px;
-  background: #e63946;
-  border-radius: 2px;
-  transition: all 0.3s;
-}
-
-/* Sidebar - SOLID HITAM PEKAT, PASTI KELIHATAN */
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: -320px;
-  width: 320px;
-  height: 100%;
-  background: #000000; /* hitam solid 100%, nggak transparan */
-  color: #ffffff; /* teks putih terang biar pasti kelihatan */
-  transition: right 0.4s ease;
-  z-index: 999;
-  padding: 90px 25px 30px;
-  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.9);
-  overflow-y: auto;
-}
-
-.sidebar.active {
-  right: 0;
-}
-
-/* Garis merah glowing di kiri sidebar (tanda KAI) */
-.sidebar::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 6px;
-  background: #e63946;
-  box-shadow: 0 0 30px rgba(230, 57, 70, 0.8);
-}
-
-/* Close button */
-.close-sidebar {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  font-size: 3.5rem;
-  color: #e63946;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.close-sidebar:hover {
-  transform: rotate(90deg) scale(1.2);
-  color: #ff4444;
-}
-
-/* Menu sidebar */
-.sidebar ul {
+/* Nav horizontal (PC/laptop) */
+nav.main-nav ul {
+  display: flex;
+  gap: 1.5rem;
   list-style: none;
+  margin: 0;
   padding: 0;
-  margin: 2rem 0;
 }
 
-.sidebar ul li {
-  margin: 1.8rem 0;
-}
-
-.sidebar ul li a {
-  color: #ffffff;
+nav.main-nav ul li a {
+  color: #f0f0f0;
   text-decoration: none;
-  font-size: 1.35rem;
-  transition: all 0.3s;
-  display: block;
-  padding: 0.6rem 0;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
 }
 
-.sidebar ul li a:hover {
+nav.main-nav ul li a:hover {
+  background: rgba(230, 57, 70, 0.3);
   color: #e63946;
-  padding-left: 0.8rem;
-  text-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
+  box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
 }
 
-/* Clock di sidebar */
-.clock-mobile {
-  margin-top: 3rem;
+/* Clock */
+#clock {
   font-family: 'Orbitron', monospace;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #00ffe0;
-  text-align: center;
-  text-shadow: 0 0 15px #00ffe0;
+  text-shadow: 0 0 10px #00ffe0;
+  white-space: nowrap;
 }
 
-/* Main - KONTEN MULAI DARI BAWAH HEADER */
+/* Konten utama - mulai dari bawah header */
 main {
-  margin-top: 80px;
-  padding: 2rem 1rem;
+  margin-top: 110px; /* aman untuk header 90px + buffer */
+  padding: 2rem 2rem 4rem;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Section */
 section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem 0;
+  margin-bottom: 4rem;
+}
+
+/* Intro */
+#intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+}
+
+#intro h2 {
+  font-size: 2.5rem;
+  color: #e63946;
+  margin-bottom: 1rem;
+}
+
+#intro p {
+  font-size: 1.15rem;
+  color: #ccc;
 }
 
 /* Gallery Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
 }
 
 .karya {
-  background: rgba(34, 34, 34, 0.85);
-  border-radius: 12px;
+  background: rgba(34, 34, 34, 0.9);
+  border-radius: 14px;
   overflow: hidden;
   transition: all 0.4s ease;
   cursor: pointer;
-  border: 1px solid rgba(230, 57, 70, 0.25);
+  border: 1px solid rgba(230, 57, 70, 0.3);
   display: flex;
   flex-direction: column;
 }
 
 .karya img {
   width: 100%;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
 
 .karya h3 {
-  padding: 1rem 1rem 0.5rem;
+  padding: 1.2rem 1.2rem 0.5rem;
   color: #e63946;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin: 0;
 }
 
 .karya p {
-  padding: 0 1rem 1.2rem;
+  padding: 0 1.2rem 1.4rem;
   color: #ccc;
-  font-size: 0.95rem;
+  font-size: 1rem;
   margin: 0;
   flex-grow: 1;
 }
 
 .karya:hover {
   transform: translateY(-12px);
-  box-shadow: 0 15px 40px rgba(230, 57, 70, 0.45);
+  box-shadow: 0 20px 50px rgba(230, 57, 70, 0.45);
   border-color: #e63946;
 }
 
@@ -253,44 +203,37 @@ section {
 /* Footer */
 footer {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2.5rem 1rem;
   background: #111;
-  border-top: 3px solid #e63946;
-  margin-top: 4rem;
+  border-top: 4px solid #e63946;
   color: #888;
+  margin-top: 6rem;
 }
 
-/* Responsive HP */
+/* Responsive HP (sementara minimalis dulu) */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-  .main-nav {
-    display: none;
-  }
   header {
     padding: 0.8rem 1rem;
     height: auto;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
   .header-left {
-    flex: 1;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 0.95rem;
   }
   main {
-    margin-top: 70px;
-    padding: 1.5rem 0.8rem;
+    margin-top: 100px;
+    padding: 1.5rem 1rem;
   }
   .grid {
     grid-template-columns: 1fr;
-    gap: 1.8rem;
+    gap: 2rem;
   }
   .karya img {
-    height: 200px;
-  }
-  .sidebar {
-    width: 85%;
-    right: -85%;
+    height: 220px;
   }
 }
