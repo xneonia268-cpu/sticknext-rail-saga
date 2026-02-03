@@ -209,30 +209,24 @@ footer {
 /*   KHUSUS MOBILE / HP                          */
 /* ============================================= */
 @media (max-width: 768px) {
-  body { padding-top: 100px; } /* lebih tinggi untuk header wrap */
+  body { padding-top: 85px; } /* lebih pas untuk header mobile */
 
   header {
     padding: 0.8rem 1rem;
+    min-height: 70px;
     height: auto;
-    flex-wrap: wrap;
-    gap: 0.6rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
   }
 
   .header-left {
-    flex: 1 1 100%;
     text-align: center;
   }
 
-  header h1 { font-size: 1.6rem; }
-  header p { font-size: 0.9rem; }
-
-  /* Hamburger muncul */
   .hamburger { display: flex !important; }
-
-  /* Nav horizontal disembunyikan */
   .main-nav { display: none !important; }
 
-  /* Sidebar */
   .sidebar {
     width: 85vw;
     right: -85vw;
@@ -244,18 +238,8 @@ footer {
 
   .sidebar ul li a { font-size: 1.4rem; }
 
-  main {
-    padding: 1.5rem 1rem;
-  }
+  main { padding: 1.5rem 1rem; }
 
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
-  }
-
+  .grid { grid-template-columns: 1fr; gap: 1.8rem; }
   .karya img { height: 200px; }
-  .karya h3 { font-size: 1.25rem; }
-  .karya p { font-size: 0.95rem; }
-
-  footer { padding: 2rem 1rem; }
 }
