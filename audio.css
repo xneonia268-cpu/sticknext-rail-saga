@@ -51,7 +51,7 @@ header p {
   to { transform: translateY(-100px); }
 }
 
-/* Komet jatuh */
+/* Komet jatuh background */
 .comet {
   position: fixed;
   width: 3px;
@@ -149,8 +149,9 @@ footer {
   font-size: 0.9rem;
   color: #aaa;
   text-shadow: 0 0 10px #ff004c;
+}
 
-  /* Loading Screen Audio - Komet Jatuh + Nebula Pulse + Teks Neon */
+/* ====== LOADING SCREEN AUDIO ====== */
 .audio-loader {
   position: fixed;
   inset: 0;
@@ -248,5 +249,4 @@ footer {
 @keyframes pulseText {
   from { opacity: 0.6; text-shadow: 0 0 20px #e63946; }
   to { opacity: 1; text-shadow: 0 0 50px #e63946, 0 0 90px #ff004c; }
-}
 }
