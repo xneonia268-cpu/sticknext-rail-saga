@@ -3,24 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontak - StickNext Saga Rail</title>
-  <link rel="stylesheet" href="CSS.css">
+  <title>Audio - StickNext Saga Rail</title>
+
+  <!-- CSS khusus halaman Audio -->
+  <link rel="stylesheet" href="audio.css">
 
   <!-- Google Fonts: Orbitron -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <!-- Loading Screen -->
   <div id="loader" class="loader">
-    <div class="spinner"></div>
-    <p id="loading-text">Menghubungkan ke jalur kosmik...</p>
+    <div class="equalizer">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <p>Mengaktifkan Ruang Audio...</p>
   </div>
 
   <!-- Header -->
   <header>
     <div class="header-left">
-      <h1>Kontak StickNext Saga Rail</h1>
-      <p>Hubungi kami untuk bergabung dalam saga</p>
+      <h1>Ruang Audio StickNext Saga Rail</h1>
+      <p>Pusat kendali musik kosmik</p>
     </div>
 
     <!-- Tombol hamburger (HP) -->
@@ -46,7 +53,7 @@
 
     <!-- Sidebar (HP) -->
     <div class="sidebar" id="sidebar">
-      <span class="close-sidebar" id="close-sidebar">&times;</span>
+      <span class="close-sidebar" id="close-sidebar">×</span>
       <ul>
         <li><a href="Beranda.html">Beranda</a></li>
         <li><a href="galeri.html">Galeri</a></li>
@@ -54,55 +61,61 @@
         <li><a href="tentang.html">Tentang</a></li>
         <li><a href="kontak.html">Kontak</a></li>
         <li><a href="disclaimer.html">Disclaimer</a></li>
-        <li><a href="HTML audio.html">Audio</a></li>
+        <li><a href="audio.html">Audio</a></li>
       </ul>
       <div id="clock-mobile" class="clock-mobile"></div>
     </div>
   </header>
 
-  <!-- Konten Kontak -->
+  <!-- Konten Utama -->
   <main>
-    <section id="kontak">
-      <h2>Informasi Kontak</h2>
-      <p>Silakan hubungi kami melalui informasi berikut:</p>
+    <section id="audio-room" data-aos="fade-up" data-aos-duration="800">
+      <h2>Playlist Kosmik</h2>
+      <p>Pilih lagu untuk menemani perjalananmu di multiverse.</p>
 
-      <ul>
-        <li>Email: <strong>rail.saga@komunitas.id</strong></li>
-        <li>Instagram: <strong>@sticksagarail</strong></li>
-        <li>Twitter: <strong>@sticksagarail</strong></li>
-      </ul>
-    </section>
+      <div class="track" data-aos="zoom-in" data-aos-delay="200">
+        <p>Rail of Eternity</p>
+        <audio id="track1" controls>
+          <source src="lagu1.mp3" type="audio/mpeg">
+        </audio>
+      </div>
 
-    <section id="form-kontak">
-      <h2>Kirim Pesan</h2>
-      <form action="#" method="post">
-        <label for="nama">Nama:</label><br>
-        <input type="text" id="nama" name="nama"><br><br>
+      <div class="track" data-aos="zoom-in" data-aos-delay="400">
+        <p>Glitch Anthem</p>
+        <audio id="track2" controls>
+          <source src="lagu2.mp3" type="audio/mpeg">
+        </audio>
+      </div>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
-
-        <label for="pesan">Pesan:</label><br>
-        <textarea id="pesan" name="pesan" rows="5"></textarea><br><br>
-
-        <button type="submit">Kirim</button>
-      </form>
+      <div class="track" data-aos="zoom-in" data-aos-delay="600">
+        <p>Saga Overture</p>
+        <audio id="track3" controls>
+          <source src="lagu3.mp3" type="audio/mpeg">
+        </audio>
+      </div>
     </section>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 StickNext Saga Rail • Dibuat oleh Screet</p>
+    <p>© 2026 StickNext Saga Rail • Dibuat oleh Screet • Pure imagination</p>
   </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out'
+    });
+  </script>
 
   <!-- Clock JS -->
   <script>
     function updateClock() {
       const now = new Date();
-      const time = now.toLocaleTimeString('id-ID', { 
-        hour12: false, 
-        timeZone: 'Asia/Jakarta' 
-      });
+      const time = now.toLocaleTimeString('id-ID', { hour12: false, timeZone: 'Asia/Jakarta' });
       document.getElementById('clock').innerText = time;
       const clockMobile = document.getElementById('clock-mobile');
       if (clockMobile) clockMobile.innerText = time;
@@ -111,37 +124,8 @@
     updateClock();
   </script>
 
-  <!-- Loading Screen JS Unik (Glitch Text) -->
-  <script>
-    window.addEventListener('load', () => {
-      const loader = document.getElementById('loader');
-      const text = document.getElementById('loading-text');
-
-      // Step 1: glitch effect pada teks
-      let glitchInterval = setInterval(() => {
-        text.style.textShadow = 
-          Math.random() > 0.5 
-            ? "2px 0 red, -2px 0 cyan" 
-            : "0 2px lime, 0 -2px magenta";
-      }, 100);
-
-      // Step 2: setelah 1 detik, stop glitch dan fade out
-      setTimeout(() => {
-        clearInterval(glitchInterval);
-        text.style.transition = "opacity 0.8s ease";
-        text.style.opacity = "0";
-      }, 1000);
-
-      // Step 3: hilangkan loader
-      setTimeout(() => {
-        loader.style.transition = "opacity 1s ease";
-        loader.style.opacity = "0";
-        setTimeout(() => {
-          loader.style.display = "none";
-        }, 1000);
-      }, 1800);
-    });
-  </script>
+  <!-- Loading Screen JS -->
+  <script src="audio.js"></script>
 
   <!-- Script Hamburger + Sidebar -->
   <script>
