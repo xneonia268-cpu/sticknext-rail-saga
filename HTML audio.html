@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Audio Lounge - StickNext Saga Rail</title>
+  <title>Audio Lounge • StickNext Saga Rail</title>
 
   <!-- CSS khusus halaman Audio -->
   <link rel="stylesheet" href="audio.css">
@@ -15,16 +15,17 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Background Kosmik -->
+  <!-- Background Kosmik (tetap) -->
   <div class="stars"></div>
   <div class="comet"></div>
 
-  <!-- Loading Screen -->
-  <div id="loader" class="loader">
-    <div class="equalizer">
-      <span></span><span></span><span></span><span></span><span></span>
+  <!-- Loading Screen Baru - Komet + Nebula Pulse -->
+  <div id="loader" class="audio-loader">
+    <div class="nebula-pulse"></div>
+    <div class="komet-container">
+      <div class="komet"></div>
     </div>
-    <p>Memasuki Ruang Liburan Musik...</p>
+    <div class="loader-text">Memasuki Audio Multiverse...</div>
   </div>
 
   <!-- Header -->
@@ -43,22 +44,25 @@
 
       <div class="track" data-aos="zoom-in" data-aos-delay="200">
         <p>Magenta Vixa</p>
-        <audio id="track1" controls controlsList="nodownload">
+        <audio controls controlsList="nodownload">
           <source src="Magenta Vixa (audio).mp3" type="audio/mpeg">
+          Browser kamu tidak mendukung audio.
         </audio>
       </div>
 
       <div class="track" data-aos="zoom-in" data-aos-delay="400">
         <p>Nevery Nature Stickman</p>
-        <audio id="track2" controls controlsList="nodownload">
+        <audio controls controlsList="nodownload">
           <source src="Nevery Nature Stickman (audio).mp3" type="audio/mpeg">
+          Browser kamu tidak mendukung audio.
         </audio>
       </div>
 
       <div class="track" data-aos="zoom-in" data-aos-delay="600">
         <p>Saddnes In Soul</p>
-        <audio id="track3" controls controlsList="nodownload">
+        <audio controls controlsList="nodownload">
           <source src="Saddnes In soul (audio).mp3" type="audio/mpeg">
+          Browser kamu tidak mendukung audio.
         </audio>
       </div>
     </section>
@@ -79,7 +83,29 @@
     });
   </script>
 
-  <!-- Loading Screen JS -->
-  <script src="audio.js"></script>
+  <!-- Clock JS (kalau lo masih mau pakai di halaman ini) -->
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('id-ID', { 
+        hour12: false, 
+        timeZone: 'Asia/Jakarta' 
+      });
+      document.getElementById('clock')?.innerText = time;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+  <!-- Loading Screen JS (inline, aman & ringan) -->
+  <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.classList.add('hidden');
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 800);
+    });
+  </script>
 </body>
 </html>
