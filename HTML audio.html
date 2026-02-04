@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Audio Lounge • StickNext Saga Rail</title>
+  <title>Audio Lounge - StickNext Saga Rail</title>
 
   <!-- CSS khusus halaman Audio -->
   <link rel="stylesheet" href="audio.css">
@@ -15,15 +15,17 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Background Kosmik (tetap) -->
+  <!-- Background Kosmik (tetap dari lo) -->
   <div class="stars"></div>
   <div class="comet"></div>
 
-  <!-- Loading Screen Baru - Komet + Nebula Pulse -->
+  <!-- Loading Screen Baru - Komet Jatuh + Nebula Pulse + Teks Neon -->
   <div id="loader" class="audio-loader">
     <div class="nebula-pulse"></div>
     <div class="komet-container">
       <div class="komet"></div>
+      <div class="komet" style="animation-delay: 1.2s; left: 30%;"></div>
+      <div class="komet" style="animation-delay: 2.5s; left: 70%;"></div>
     </div>
     <div class="loader-text">Memasuki Audio Multiverse...</div>
   </div>
@@ -83,21 +85,7 @@
     });
   </script>
 
-  <!-- Clock JS (kalau lo masih mau pakai di halaman ini) -->
-  <script>
-    function updateClock() {
-      const now = new Date();
-      const time = now.toLocaleTimeString('id-ID', { 
-        hour12: false, 
-        timeZone: 'Asia/Jakarta' 
-      });
-      document.getElementById('clock')?.innerText = time;
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-  </script>
-
-  <!-- Loading Screen JS (inline, aman & ringan) -->
+  <!-- Loading Screen JS -->
   <script>
     window.addEventListener('load', () => {
       const loader = document.getElementById('loader');
