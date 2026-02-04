@@ -23,7 +23,7 @@ function initPlaylist() {
   });
 }
 
-// Simpan track global agar tetap jalan meski pindah halaman
+// Simpan track global agar tetap jalan meski pindah halaman (opsional)
 let globalTrack = null;
 function setGlobalTrack(audio) {
   globalTrack = audio;
@@ -77,7 +77,20 @@ function initSidebar() {
   }
 }
 
-// Custom Player Controls
+// Auto loop: lagu muter lagi saat habis kecuali user pause
+function initAutoLoop() {
+  const audios = document.querySelectorAll("audio");
+  audios.forEach(audio => {
+    audio.addEventListener("ended", () => {
+      if (!audio.paused) { // kalau user tidak tekan pause
+        audio.currentTime = 0;
+        audio.play();
+      }
+    });
+  });
+}
+
+// Custom Player Controls (opsional, kalau masih dipakai)
 function initCustomPlayers() {
   const players = document.querySelectorAll(".custom-player");
   players.forEach(player => {
@@ -106,5 +119,6 @@ window.addEventListener('load', () => {
   initEqualizer();
   initClock();
   initSidebar();
-  initCustomPlayers(); // aktifkan custom player
+  initAutoLoop();      // fitur baru: auto loop
+  initCustomPlayers(); // opsional: aktifkan custom player
 });
