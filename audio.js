@@ -77,6 +77,28 @@ function initSidebar() {
   }
 }
 
+// Custom Player Controls
+function initCustomPlayers() {
+  const players = document.querySelectorAll(".custom-player");
+  players.forEach(player => {
+    const audio = player.nextElementSibling; // audio ada tepat setelah div player
+    const playBtn = player.querySelector(".play");
+    const pauseBtn = player.querySelector(".pause");
+    const volume = player.querySelector(".volume");
+
+    playBtn.addEventListener("click", () => {
+      // stop semua audio lain
+      document.querySelectorAll("audio").forEach(a => {
+        if (a !== audio) a.pause();
+      });
+      audio.play();
+    });
+
+    pauseBtn.addEventListener("click", () => audio.pause());
+    volume.addEventListener("input", e => audio.volume = e.target.value);
+  });
+}
+
 // ====== INIT ======
 window.addEventListener('load', () => {
   initLoader();
@@ -84,4 +106,5 @@ window.addEventListener('load', () => {
   initEqualizer();
   initClock();
   initSidebar();
+  initCustomPlayers(); // aktifkan custom player
 });
